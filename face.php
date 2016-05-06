@@ -33,6 +33,8 @@ if(isset($_FILES['img'])){
       
 }
 
+
+
 $res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.urlencode($file_name));
 
 $data = json_decode($res, true);
@@ -125,6 +127,7 @@ $data = json_decode($res, true);
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                 	<center><img src="<?php echo './img/face/'.$file_name; ?>" style="width:200px;"></center><br />
+                    <h2>Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $_POST['name']; ?></h2>
                 	<h2>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $data["imageFaces"][0]["gender"]["gender"]; ?></h2>
                 	<h2>Age Range : <?php echo $data["imageFaces"][0]["age"]["ageRange"]; ?></h2>
                 </div>
