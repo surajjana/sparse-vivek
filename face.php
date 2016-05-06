@@ -22,13 +22,15 @@ if(isset($_FILES['img'])){
       if(empty($errors)==true){
          move_uploaded_file($file_tmp,"./img/face/".$file_name);
          
-         $res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.$file_name);
-
-		 $data = json_decode($res, true);
+         
          /*echo $file_name;*/
       }else{
          print_r($errors);
       }
+
+      $res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.$file_name);
+
+      $data = json_decode($res, true);
 }
 
 ?>
