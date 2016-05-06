@@ -1,7 +1,7 @@
 <?php  
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
-$file_name = '';
+$name = '';
 
 if(isset($_FILES['img'])){
       $errors= array();
@@ -10,6 +10,8 @@ if(isset($_FILES['img'])){
       $file_tmp =$_FILES['img']['tmp_name'];
       $file_type=$_FILES['img']['type'];
       $file_ext=strtolower(end(explode('.',$_FILES['img']['name'])));
+
+      $name = str_replace(" ", "-", $file_name);
       
       $expensions= array("jpeg","jpg","png");
       
@@ -22,7 +24,7 @@ if(isset($_FILES['img'])){
       }
       
       if(empty($errors)==true){
-         move_uploaded_file($file_tmp,"./img/face/".$file_name);
+         move_uploaded_file($file_tmp,"./img/face/".$name);
          
          
          /*echo $file_name;*/
@@ -32,8 +34,6 @@ if(isset($_FILES['img'])){
 
       
 }
-
-$name = str_replace(" ", "-", $file_name);
 
 $res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.$name);
 
