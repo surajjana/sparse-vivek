@@ -33,9 +33,9 @@ if(isset($_FILES['img'])){
       
 }
 
+$name = str_replace(" ", "-", $file_name);
 
-
-$res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.urlencode($file_name));
+$res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.$name);
 
 $data = json_decode($res, true);
 
