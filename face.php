@@ -1,6 +1,8 @@
 <?php  
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
+$file_name = '';
+
 if(isset($_FILES['img'])){
       $errors= array();
       $file_name = $_FILES['img']['name'];
@@ -28,10 +30,12 @@ if(isset($_FILES['img'])){
          print_r($errors);
       }
 
-      $res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.$file_name);
-
-      $data = json_decode($res, true);
+      
 }
+
+$res = file_get_contents('http://vivek-sparse.herokuapp.com/detect/'.$file_name);
+
+$data = json_decode($res, true);
 
 ?>
 
