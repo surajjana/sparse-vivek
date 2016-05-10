@@ -12,6 +12,11 @@ body {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+
+.thumb {
+    margin-bottom: 30px;
+}
+
 hr {
   border-color: #f05f40;
   border-width: 3px;

@@ -123,6 +123,7 @@ if(! $retval )
                 <div class="col-md-4">
                 	<center><img src="<?php echo './img/'.$filename; ?>" style="width:200px;"></center><br />
                     
+                    <h2>Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $_POST['name']; ?></h2>
                 	<h2>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $data["imageFaces"][0]["gender"]["gender"]; ?></h2>
                 	<h2>Age Range : <?php echo $data["imageFaces"][0]["age"]["ageRange"]; ?></h2>
                 </div>
