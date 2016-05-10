@@ -111,7 +111,7 @@ if(! $retval )
                     while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
                         if(strlen($row['gender']) != 0){
                             echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="max-height:300px;">
-                    <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:400px;" alt=""></a>
+                    <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:400px;max-height:300px;" alt=""></a>
             </div>';
                         }
                     }
