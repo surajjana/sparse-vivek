@@ -105,7 +105,7 @@ if(! $retval )
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row row-eq-height">
 
                 <?php  
                     while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
