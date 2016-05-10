@@ -111,6 +111,7 @@ $row = mysql_fetch_array($retval, MYSQL_ASSOC);
                 <div class="col-md-4">
                 	<center><img src="<?php echo $row['img_url']; ?>" style="width:200px;"></center><br />
                     
+                    <h2>Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $row['name']; ?></h2>
                 	<h2>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $row['gender']; ?></h2>
                 	<h2>Age Range : <?php echo $row['age_range']; ?></h2>
                 </div>
