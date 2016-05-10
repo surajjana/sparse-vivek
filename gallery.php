@@ -112,7 +112,7 @@ if(! $retval )
                         if(strlen($row['gender']) != 0){
                             echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="'.$row['img_url'].'" style="width:400px;" alt="">
+                    <a href="#"><img class="img-responsive" src="'.$row['img_url'].'" style="width:400px;" alt=""></a>
                 </a>
             </div>';
                         }
