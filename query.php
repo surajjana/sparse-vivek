@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sparse | Home</title>
+    <title>Sparse | Query</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -71,7 +71,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sparse Dashboard</h2>
+                    <h2 class="section-heading">Sparse Query Data</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -79,26 +79,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="add.html">
+                    <a href="#">
                         <div class="service-box">
-                            <i class="fa fa-4x fa-plus wow bounceIn text-primary"></i>
-                            <h3>Add</h3>
+                            <i class="fa fa-4x fa-user wow bounceIn text-primary"></i>
+                            <h3>Query By Name</h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="gallery.php">
+                    <a href="#">
                         <div class="service-box">
-                            <i class="fa fa-4x fa-picture-o wow bounceIn text-primary"></i>
-                            <h3>Gallery</h3>
+                            <i class="fa fa-4x fa-venus wow bounceIn text-primary"></i>
+                            <i class="fa fa-4x fa-mars wow bounceIn text-primary"></i>
+                            <h3>Query By Gender</h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="query.php">
+                    <a href="#">
                         <div class="service-box">
-                            <i class="fa fa-4x fa-line-chart wow bounceIn text-primary"></i>
-                            <h3>Query</h3>
+                            <i class="fa fa-4x fa-search-minus wow bounceIn text-primary"></i>
+                            <h3>Query By Age Range</h3>
                         </div>
                     </a>
                 </div>
