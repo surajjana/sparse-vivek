@@ -28,7 +28,7 @@ $data = json_decode($res, true);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sparse Vivek | Home</title>
+    <title>Sparse | Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
