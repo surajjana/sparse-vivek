@@ -1,23 +1,26 @@
-<?php  
 
-$res = file_get_contents('http://localhost:8000/detect/enhanced-buzz-27424-1335452024-0.jpg');
+<?php
+// File and new size
+$filename = './real/img/1462864635.jpg';
+/*$percent = 0.5;*/
 
-$data = json_decode($res, true);
+/*// Content type
+header('Content-Type: image/jpeg');*/
 
-/*var_dump($data);*/
+// Get new sizes
+list($width, $height) = getimagesize($filename);
 
-/*echo nl2br('Gender : '.$data["imageFaces"][0]["gender"]["gender"].'\n');
-echo nl2br('Age Range : '.$data["imageFaces"][0]["age"]["ageRange"].'\n');*/
+echo $height;
+/*$newwidth = 400;
+$newheight = 300;
 
+// Load
+$thumb = imagecreatetruecolor($newwidth, $newheight);
+$source = imagecreatefromjpeg($filename);
+
+// Resize
+imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+// Output
+imagejpeg($thumb);*/
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Result</title>
-</head>
-<body>
-<h2>Gender : <?php echo $data["imageFaces"][0]["gender"]["gender"]; ?></h2><br />
-<h2>Age Range : <?php echo $data["imageFaces"][0]["age"]["ageRange"]; ?></h2>
-</body>
-</html>

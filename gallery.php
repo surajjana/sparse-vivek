@@ -1,3 +1,28 @@
+<?php  
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+require_once("constants.php");
+
+$conn = mysql_connect(HOST, USER, PASSWORD);
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db(DB);
+
+$sql = "select * from info";
+
+$retval = mysql_query( $sql, $conn );
+
+if(! $retval )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,32 +106,20 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <?php  
+                    while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
+                        if(strlen($row['gender']) != 0){
+                            echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                    <img class="img-responsive" src="'.$row['img_url'].'" style="width:400px;" alt="">
                 </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="./real/img/1462864635.jpg" style="width:400px;height:300px;" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            </div>';
+                        }
+                    }
+                ?>
+                
+            <!-- <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
                     <img class="img-responsive" src="http://placehold.it/400x300" alt="">
                 </a>
@@ -141,6 +154,26 @@
                     <img class="img-responsive" src="http://placehold.it/400x300" alt="">
                 </a>
             </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div> -->
             </div>
         </div>
     </section>
