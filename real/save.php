@@ -1,6 +1,7 @@
 <?php
 
-//set random name for the image, used time() for uniqueness
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+require_once("../constants.php");
 
 $filename =  time() . '.jpg';
 $filepath = 'img/';
@@ -15,6 +16,24 @@ if (!$result) {
 $res = file_get_contents('http://vivek-sparse.herokuapp.com/detect_real/'.$filename);
 
 $data = json_decode($res, true);
+
+$conn = mysql_connect(HOST, USER, PASSWORD);
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db(DB);
+
+$sql = "insert into info(id,name,gender,age_range,img_url,time,visits) values('','".$_POST['name']."','".$data["imageFaces"][0]["gender"]["gender"]."','".$data["imageFaces"][0]["age"]["ageRange"]."','./real/img/".$file_name."','".time()."',0)";
+
+$retval = mysql_query( $sql, $conn );
+
+if(! $retval )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
 ?>
 
 <!DOCTYPE html>
