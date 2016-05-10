@@ -22,6 +22,15 @@ if(! $retval )
 
 $row = mysql_fetch_array($retval, MYSQL_ASSOC);
 
+$sql_visits = "update info set visits=".(string)($row['visits']+1)." where id=".$_GET['id'];
+
+$retval_v = mysql_query( $sql_visits, $conn );
+
+if(! $retval_v )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
 ?>
 
 <!DOCTYPE html>
