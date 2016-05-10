@@ -25,7 +25,7 @@ if(! $conn )
 
 mysql_select_db(DB);
 
-$sql = "insert into info(id,name,gender,age_range,img_url,time,visits) values('','".$_POST['name']."','".$data["imageFaces"][0]["gender"]["gender"]."','".$data["imageFaces"][0]["age"]["ageRange"]."','./real/img/".$file_name."','".time()."',0)";
+$sql = "insert into info(id,name,gender,age_range,img_url,time,visits) values('','sample','".$data["imageFaces"][0]["gender"]["gender"]."','".$data["imageFaces"][0]["age"]["ageRange"]."','./real/img/".$filename."','".time()."',0)";
 
 $retval = mysql_query( $sql, $conn );
 
