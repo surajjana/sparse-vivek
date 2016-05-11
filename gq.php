@@ -1,3 +1,28 @@
+<?php  
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+require_once("constants.php");
+
+$conn = mysql_connect(HOST, USER, PASSWORD);
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db(DB);
+
+$sql = "select * from info where gender='".$_POST['gender']."'";
+
+$retval = mysql_query( $sql, $conn );
+
+if(! $retval )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,32 +99,79 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sparse Gender</h2>
+                    <h2 class="section-heading">Sparse Gallery</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                <form action="gq.php" method="post">
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Gender <span style="color:red;">*</span> :</label>
-                            <select name="gender" class="form-control">
-                                <option value="MALE">Male</option>
-                                <option value="FEMALE">Female</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- <p style="color:red;">Invalid credentials</p> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="row row-eq-height">
 
-                </form>
-                    <!-- <center><a href="forgot_password.php" style="color:blue;">Forgot Password</a></center> -->
-                </div>
-                <div class="col-md-4"></div>
+                <?php  
+                    while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
+                        if(strlen($row['gender']) != 0){
+                            echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="max-height:300px;">
+                    <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:100%;max-height:300px;" alt=""></a>
+            </div>';
+                        }
+                    }
+                ?>
+                
+            <!-- <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                </a>
+            </div> -->
             </div>
         </div>
     </section>
