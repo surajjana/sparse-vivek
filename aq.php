@@ -11,7 +11,7 @@ if(! $conn )
 
 mysql_select_db(DB);
 
-$sql = "select * from info where gender='".$_GET['age']."'";
+$sql = "select * from info where age_range='".$_GET['age']."'";
 
 $retval = mysql_query( $sql, $conn );
 
