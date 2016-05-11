@@ -83,7 +83,7 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                <form action="aq.php" method="post">
+                <form action="aq.php" method="get">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Age Range <span style="color:red;">*</span> :</label>
