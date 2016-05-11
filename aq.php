@@ -11,7 +11,7 @@ if(! $conn )
 
 mysql_select_db(DB);
 
-$sql = "select * from info where gender='".$_POST['gender']."'";
+$sql = "select * from info where gender='".$_POST['age_range']."'";
 
 $retval = mysql_query( $sql, $conn );
 
@@ -34,7 +34,7 @@ if(! $retval )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sparse | Gender</title>
+    <title>Sparse | Age Range</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -99,7 +99,7 @@ if(! $retval )
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sparse Gender</h2>
+                    <h2 class="section-heading">Sparse Age Range</h2>
                     <hr class="primary">
                 </div>
             </div>
