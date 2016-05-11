@@ -87,7 +87,7 @@
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Age Range <span style="color:red;">*</span> :</label>
-                            <select name="age_range" class="form-control">
+                            <select name="age" class="form-control">
                                 <option value="<18">&lt;18</option>
                                 <option value="18-24">18-24</option>
                                 <option value="25-34">25-34</option>
