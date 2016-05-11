@@ -93,6 +93,8 @@
                                 <option value="25-34">25-34</option>
                                 <option value="35-44">35-44</option>
                                 <option value="45-54">45-54</option>
+                                <option value="55-64">55-64</option>
+                                <option value=">64">&gt;64</option>
                             </select>
                         </div>
                     </div>
