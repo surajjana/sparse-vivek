@@ -114,6 +114,9 @@ if(! $retval )
                     <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:100%;max-height:300px;" alt=""></a>
             </div>';
                         }
+                        if(sizeof($row) == 0){
+                            echo '<center><h2>No result!!</h2></center>';
+                        }
                     }
                 ?>
                 
