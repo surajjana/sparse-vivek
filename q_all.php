@@ -17,23 +17,32 @@ $gender = $_POST['gender'];
 $age_range = $_POST['age'];
 
 $sql = '';
+$status = 1;
 
 if((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where name='".$name."' and gender='".$gender."' and age_range='".$age_range."'";
+    $status = 1;
 }elseif((strlen($name) != 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') == 0)){
     $sql = "select * from info where name='".$name."'";
+    $status = 1;
 }elseif((strlen($name) == 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') == 0)){
     $sql = "select * from info where gender='".$gender."'";
+    $status = 1;
 }elseif((strlen($name) == 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where age_range='".$age_range."'";
+    $status = 1;
 }elseif((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') == 0)){
     $sql = "select * from info where name='".$name."' and gender='".$gender."'";
+    $status = 1;
 }elseif((strlen($name) == 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where gender='".$gender."' and age_range='".$age_range."'";
+    $status = 1;
 }elseif((strlen($name) != 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where name='".$name."' and age_range='".$age_range."'";
+    $status = 1;
 }else{
-    $sql = "";
+    $sql = "select * from info";
+    $status = 0;
 }
 
 $retval = mysql_query( $sql, $conn );
@@ -131,14 +140,17 @@ if(! $retval )
             <div class="row row-eq-height">
 
                 <?php  
-                    while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
-                        if(strlen($row['gender']) != 0){
-                            echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="max-height:300px;">
-                    <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:100%;max-height:300px;" alt=""></a>
-            </div>';
-                        }
-                        if(sizeof($row) == 0){
-                            echo '<center><h2>No result!!</h2></center>';
+                    if($status == 0){
+
+                        echo '<center><h2>No result!!</h2></center>';
+
+                    }else{
+                        while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
+                            if(strlen($row['gender']) != 0){
+                                echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="max-height:300px;">
+                        <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:100%;max-height:300px;" alt=""></a>
+                </div>';
+                            }
                         }
                     }
                 ?>
