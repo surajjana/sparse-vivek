@@ -16,6 +16,8 @@ $name = $_POST['name'];
 $gender = $_POST['gender'];
 $age_range = $_POST['age'];
 
+$sql = '';
+
 if((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmo($age_range,'0'))){
     $sql = "select * from info where name='".$name."' and gender='".$gender."' and age_range='".$age_range."'"
 }else{
