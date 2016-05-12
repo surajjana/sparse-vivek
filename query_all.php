@@ -86,14 +86,14 @@
                 <form action="q_all.php" method="post">
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Enter Name <span style="color:red;">*</span> :</label>
-                            <input type="text" class="form-control" name="name" id="uname" required data-validation-required-message="Please enter your name.">
+                            <label>Enter Name :</label>
+                            <input type="text" class="form-control" name="name" id="uname">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Gender <span style="color:red;">*</span> :</label>
+                            <label>Gender :</label>
                             <select name="gender" class="form-control">
                                 <option value="0">Select</option>
                                 <option value="MALE">Male</option>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Age Range <span style="color:red;">*</span> :</label>
+                            <label>Age Range :</label>
                             <select name="age" class="form-control">
                                 <option value="0">Select</option>
                                 <option value="<18">&lt;18</option>
