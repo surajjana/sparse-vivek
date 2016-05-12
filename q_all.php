@@ -26,8 +26,14 @@ if((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0')
     $sql = "select * from info where gender='".$gender."'";
 }elseif((strlen($name) == 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where age_range='".$age_range."'";
+}elseif((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') == 0)){
+    $sql = "select * from info where name='".$name."' and gender='".$gender."'";
+}elseif((strlen($name) == 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') != 0)){
+    $sql = "select * from info where gender='".$gender."' and age_range='".$age_range."'";
+}elseif((strlen($name) != 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') != 0)){
+    $sql = "select * from info where name='".$name."' and gender='".$gender."'";
 }else{
-    $sql = "select * from info where name='".$name."'";
+    $sql = "";
 }
 
 $retval = mysql_query( $sql, $conn );
