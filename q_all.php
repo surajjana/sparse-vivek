@@ -31,7 +31,7 @@ if((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0')
 }elseif((strlen($name) == 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where gender='".$gender."' and age_range='".$age_range."'";
 }elseif((strlen($name) != 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') != 0)){
-    $sql = "select * from info where name='".$name."' and gender='".$gender."'";
+    $sql = "select * from info where name='".$name."' and age_range='".$age_range."'";
 }else{
     $sql = "";
 }
