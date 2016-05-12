@@ -108,15 +108,16 @@ if(! $retval )
             <div class="row row-eq-height">
 
                 <?php  
+                    if(sizeof($row) == 0){
+                            echo '<center><h2>No result!!</h2></center>';
+                        }
                     while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
                         if(strlen($row['gender']) != 0){
                             echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb" style="max-height:300px;">
                     <a href="info.php?id='.$row['id'].'"><img class="img-responsive" src="'.$row['img_url'].'" style="width:100%;max-height:300px;" alt=""></a>
             </div>';
                         }
-                        if(sizeof($row) == 0){
-                            echo '<center><h2>No result!!</h2></center>';
-                        }
+                        
                     }
                 ?>
                 
