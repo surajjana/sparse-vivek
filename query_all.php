@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sparse | Query</title>
+    <title>Sparse | All</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -51,15 +51,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >Sparse</a>
+                <a class="navbar-brand" href="#" >Sparse</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="./real/index.html">Real</a>
+                    <!-- <li>
+                        <a class="page-scroll" href="#">About</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contact</a>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -71,46 +74,55 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sparse Query Data</h2>
+                    <h2 class="section-heading">Sparse</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="query_name.php">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-user wow bounceIn text-primary"></i>
-                            <h3>Query By Name</h3>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                <form action="q_all.php" method="post">
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Enter Name <span style="color:red;">*</span> :</label>
+                            <input type="text" class="form-control" name="name" id="uname" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="query_gender.php">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-venus wow bounceIn text-primary"></i>
-                            <i class="fa fa-4x fa-mars wow bounceIn text-primary"></i>
-                            <h3>Query By Gender</h3>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Gender <span style="color:red;">*</span> :</label>
+                            <select name="gender" class="form-control">
+                                <option value="0">Select</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="query_age.php">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-search-minus wow bounceIn text-primary"></i>
-                            <h3>Query By Age Range</h3>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Age Range <span style="color:red;">*</span> :</label>
+                            <select name="age" class="form-control">
+                                <option value="0">Select</option>
+                                <option value="<18">&lt;18</option>
+                                <option value="18-24">18-24</option>
+                                <option value="25-34">25-34</option>
+                                <option value="35-44">35-44</option>
+                                <option value="45-54">45-54</option>
+                                <option value="55-64">55-64</option>
+                                <option value=">64">&gt;64</option>
+                            </select>
                         </div>
-                    </a>
+                    </div>
+                    <!-- <p style="color:red;">Invalid credentials</p> -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+                    <!-- <center><a href="forgot_password.php" style="color:blue;">Forgot Password</a></center> -->
                 </div>
-                <div class="col-lg-4 col-md-6 text-center touch-anchor">
-                    <a href="query_all.php">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-search-minus wow bounceIn text-primary"></i>
-                            <h3>Combined Search</h3>
-                        </div>
-                    </a>
-                </div>
+                <div class="col-md-4"></div>
             </div>
         </div>
     </section>
