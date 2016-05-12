@@ -106,7 +106,7 @@
                 <div class="col-lg-4 col-md-6 text-center touch-anchor">
                     <a href="query_all.php">
                         <div class="service-box">
-                            <i class="fa fa-4x fa-search-minus wow bounceIn text-primary"></i>
+                            <i class="fa fa-4x fa-search wow bounceIn text-primary"></i>
                             <h3>Combined Search</h3>
                         </div>
                     </a>
