@@ -18,8 +18,14 @@ $age_range = $_POST['age'];
 
 $sql = '';
 
-if((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0'))){
+if((strlen($name) != 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') != 0)){
     $sql = "select * from info where name='".$name."' and gender='".$gender."' and age_range='".$age_range."'";
+}elseif((strlen($name) != 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') == 0)){
+    $sql = "select * from info where name='".$name."'";
+}elseif((strlen($name) == 0) && (strcmp($gender,'0') != 0) && (strcmp($age_range,'0') == 0)){
+    $sql = "select * from info where gender='".$gender."'";
+}elseif((strlen($name) == 0) && (strcmp($gender,'0') == 0) && (strcmp($age_range,'0') != 0)){
+    $sql = "select * from info where age_range='".$age_range."'";
 }else{
     $sql = "select * from info where name='".$name."'";
 }
@@ -45,7 +51,7 @@ if(! $retval )
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sparse | Name</title>
+    <title>Sparse | All</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -110,7 +116,7 @@ if(! $retval )
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sparse Name</h2>
+                    <h2 class="section-heading">Sparse</h2>
                     <hr class="primary">
                 </div>
             </div>
