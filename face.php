@@ -158,7 +158,7 @@ if(! $retval )
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Surajjana 2016</p>
+                    <p>Copyright &copy; Sparse 2016</p>
                 </div>
             </div>
         </div>
